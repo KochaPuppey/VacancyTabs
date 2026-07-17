@@ -10,7 +10,6 @@ export const fetchVacancy = createAsyncThunk<
     'listVacancy/fetchVacancy',
     async (filters, { rejectWithValue }) => {
         const params = new URLSearchParams()
-        console.log(filters)
         try {
             if (filters.searchQuery) {
                 params.set ('search', filters.searchQuery);

@@ -18,7 +18,7 @@ const initialState: VacancyState = {
     error: null,
 
     search: '',
-    city: 'Все города',
+    city: 'Москва',
     selectSkills: ['JavaScript', 'React', 'Redux', 'Python'],
 };
 

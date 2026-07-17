@@ -1,7 +1,7 @@
 import styles from './AsideSkillAndSity.module.css';
 import InputMantine from '../../UI/InputMantine';
 import ButtonMantine from '../../UI/ButtonMantine';
-import SelectMantine from '../../UI/SelectMantine';
+//import SelectMantine from '../../UI/SelectMantine';
 import PillsInputMantine from '../../UI/PillsInputMantine';
 import { IconPlus } from '@tabler/icons-react';
 import {type ChangeEvent, useState, type KeyboardEvent} from 'react';
@@ -47,9 +47,6 @@ export default function AsideSkillAndSity() {
           </ButtonMantine>
         </div>
         <PillsInputMantine/>
-      </div>
-      <div className={styles.selectCity }>
-        <SelectMantine />
       </div>
     </aside>
   );
