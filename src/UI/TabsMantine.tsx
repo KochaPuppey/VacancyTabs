@@ -13,7 +13,7 @@ export default function TabsMantine() {
             defaultValue="Москва"
             onChange={(value) => {
                 if (value) {
-                    navigate(`/vacancy/${value}`)
+                    navigate(`/${value}`)
                     dispatch(setCity(value))
                 }
             }

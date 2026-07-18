@@ -28,7 +28,7 @@ const theme = createTheme({
 });
 
 createRoot(document.getElementById('root')!).render(
-      <BrowserRouter  basename="/Vacancylist">
+      <BrowserRouter  basename="/VacancyTabs">
       <Provider store = {store}>
       <MantineProvider theme={theme}>
     <App />
