@@ -1,1 +1,1 @@
-https://kochapuppey.github.io/VacancyUseMatch/vacancy/Москва
+https://kochapuppey.github.io/VacancyUseMatch/
