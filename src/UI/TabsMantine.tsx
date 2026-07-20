@@ -10,18 +10,18 @@ export default function TabsMantine() {
     return (
         <Tabs
             value={tabValue}
-            defaultValue="Москва"
+            defaultValue="Moscow"
             onChange={(value) => {
                 if (value) {
-                    navigate(`/${value}`)
+                    navigate(`/vacancy/${value}`)
                     dispatch(setCity(value))
                 }
             }
             }
         >
             <Tabs.List>
-                <Tabs.Tab value="Москва">Москва</Tabs.Tab>
-                <Tabs.Tab value="Санкт-Петербург">Санкт-Петербург</Tabs.Tab>
+                <Tabs.Tab value="Moscow">Москва</Tabs.Tab>
+                <Tabs.Tab value="Petersburg">Санкт-Петербург</Tabs.Tab>
             </Tabs.List>
         </Tabs>
     );

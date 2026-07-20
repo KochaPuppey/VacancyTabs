@@ -18,6 +18,8 @@
     align-items: center;
     color: grey;
     gap: 8px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .middle {
@@ -31,6 +33,9 @@
     display: flex;
     justify-content: center;
     gap: 8px;
+    cursor: pointer;
+    color:grey;
+    font-size: 16px;
 }
 
 .dot {
@@ -41,4 +46,9 @@
     background-color: #3b82f6;
     border-radius: 50%;
     align-items: end;
+}
+
+.active {
+    color: black;
+    transform: scale(1.1);
 }

@@ -42,7 +42,7 @@ export default function ListVacancy ({vacancies} : ListVacancyProps) {
 
           <div className={styles.city}>{vacancy.city}</div>
 
-          <button className={styles.button} onClick = {() => navigate(`/jobs/${vacancy.id}`)} >
+          <button className={styles.button} onClick = {() => navigate(`/vacancy/jobs/${vacancy.id}`)} >
             Смотреть вакансию
           </button>
         </div>

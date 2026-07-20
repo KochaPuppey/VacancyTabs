@@ -17,7 +17,7 @@ export default function NotFoundPage () {
                 <ButtonMantine
                     w={'100'}
                     h={'36'}
-                    onClick={() => navigate('/Москва')}
+                    onClick={() => navigate('/vacancy/Москва')}
                 >
                     На главную
                 </ButtonMantine>

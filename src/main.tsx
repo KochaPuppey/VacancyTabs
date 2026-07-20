@@ -5,7 +5,7 @@ import { createTheme, MantineProvider } from '@mantine/core';
 import App from './App.tsx';
 import {setupStore} from './store/store';
 import {Provider} from 'react-redux';
-import {BrowserRouter} from 'react-router';
+import {BrowserRouter} from 'react-router-dom';
 import '@mantine/core/styles.css';
 const store = setupStore();
 const theme = createTheme({
@@ -28,7 +28,7 @@ const theme = createTheme({
 });
 
 createRoot(document.getElementById('root')!).render(
-      <BrowserRouter  basename="/VacancyTabs">
+      <BrowserRouter   basename={import.meta.env.DEV ? "/" : "/VacancyUseMatch"}>
       <Provider store = {store}>
       <MantineProvider theme={theme}>
     <App />
