@@ -1,8 +1,7 @@
 import styles from './NotFoundPage.module.css';
-import {useNavigate} from 'react-router';
+import {Link} from 'react-router-dom';
 import ButtonMantine from "../../UI/ButtonMantine.tsx";
 export default function NotFoundPage () {
-    const navigate = useNavigate();
     return (
         <div className={styles.container}>
             <div className={styles.main}>
@@ -17,9 +16,8 @@ export default function NotFoundPage () {
                 <ButtonMantine
                     w={'100'}
                     h={'36'}
-                    onClick={() => navigate('/vacancy/Moscow')}
                 >
-                    На главную
+                    <Link to='/vacancy/Москва'>На главную</Link>
                 </ButtonMantine>
             </div>
             <div className="tenor-gif-embed" data-postid="12536795" data-share-method="host" data-aspect-ratio="1.90476"

@@ -1,10 +1,9 @@
 import styles from './Header.module.css'
 import {UserCircleIcon} from '@phosphor-icons/react'
 import imageHH from '../../assets/image 2.png'
-import {useNavigate, useMatch} from 'react-router'
+import {Link, useMatch} from 'react-router-dom'
 import classNames from 'classnames';
 export default function Header () {
-    const navigate = useNavigate();
     const match = useMatch('/vacancy/*')
   return (
     <header className={styles.header}>
@@ -14,10 +13,14 @@ export default function Header () {
       </div>
       <div className={styles.middle}>
           <div className={classNames(styles.vacancy, {[styles.active]: match})}>
-        <span onClick={() => navigate('/vacancy/Москва')}>Вакансии FE</span>
+        <span>
+            <Link to='/vacancy/Москва'>Вакансии FE</Link>
+        </span>
           <span className={styles.dot}></span>
           </div>
-        <span className={classNames(styles.aboutMe,{[styles.active]: !match})} onClick={() => navigate('/about/')}> <UserCircleIcon size={22}  />Обо мне</span>
+        <span className={classNames(styles.aboutMe,{[styles.active]: !match})}> <UserCircleIcon size={22}  />
+            <Link to='/about/'>Обо мне</Link>
+        </span>
       </div>
     </header>
   )

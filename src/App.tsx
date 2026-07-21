@@ -10,7 +10,7 @@ function App() {
     return (
         <Routes>
             <Route element={<MainLayout/>}>
-                <Route path='/' element={<Navigate to='/vacancy/Moscow' />}/>
+                <Route path='/' element={<Navigate to='/vacancy/Москва' />}/>
                 <Route path='vacancy'>
                     <Route path= ':city' element= {<MainPage />}/>
                     <Route path='jobs/:id' element={<VacancyWithDescriptionPage/>}/>

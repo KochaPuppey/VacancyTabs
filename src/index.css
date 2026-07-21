@@ -114,3 +114,7 @@ code {
 body {
   background: rgba(15, 15, 16, 0) !important;
 }
+
+a {
+  all: unset;
+}

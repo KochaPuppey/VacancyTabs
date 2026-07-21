@@ -1,6 +1,6 @@
 import styles from './ListVacancy.module.css'
 import type {VacancyType} from '../../types/VacancyType.ts';
-import {useNavigate} from 'react-router'
+import {Link} from 'react-router'
 type ListVacancyProps = {
   vacancies: VacancyType [];
 }
@@ -17,7 +17,6 @@ const spaceClasses = {
 };
 
 export default function ListVacancy ({vacancies} : ListVacancyProps) {
-  const navigate = useNavigate();
   return (
     <div className={styles.cardsContainer}>
       {vacancies.map((vacancy) => (
@@ -42,8 +41,10 @@ export default function ListVacancy ({vacancies} : ListVacancyProps) {
 
           <div className={styles.city}>{vacancy.city}</div>
 
-          <button className={styles.button} onClick = {() => navigate(`/vacancy/jobs/${vacancy.id}`)} >
+          <button className={styles.button} >
+            <Link to='/vacancy/jobs/${vacancy.id}'>
             Смотреть вакансию
+            </Link>
           </button>
         </div>
       ))}
