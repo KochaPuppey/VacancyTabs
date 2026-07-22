@@ -8,7 +8,7 @@ import { MagnifyingGlassIcon } from "@phosphor-icons/react";
 import { useEffect,} from 'react';
 import {useTypedSelector, useTypedDispatch}from '../../hooks/redux';
 import {fetchVacancy} from '../../reducers/VacancyThunk.ts';
-import { setSearch,  } from '../../reducers/VacancySlice';
+import { setSearch} from '../../reducers/VacancySlice';
 import PaginationMantine from "../../UI/PaginationMantine.tsx";
 export default function MainPage () {
     const {

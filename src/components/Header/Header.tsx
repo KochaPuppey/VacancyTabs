@@ -18,9 +18,11 @@ export default function Header () {
         </span>
           <span className={styles.dot}></span>
           </div>
+          <Link to='/about/'>
         <span className={classNames(styles.aboutMe,{[styles.active]: !match})}> <UserCircleIcon size={22}  />
-            <Link to='/about/'>Обо мне</Link>
+            Обо мне
         </span>
+      </Link>
       </div>
     </header>
   )

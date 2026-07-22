@@ -1,17 +1,47 @@
-import { Link, useParams } from 'react-router-dom';
+import {useParams, useNavigate, useSearchParams} from 'react-router-dom';
 import { Tabs } from '@mantine/core';
-import {useTypedDispatch} from "../hooks/redux.ts";
-import { setCity } from '../reducers/VacancySlice';
+import {useTypedDispatch, useTypedSelector} from "../hooks/redux.ts";
+import { setCity} from '../reducers/VacancySlice';
+import {useEffect} from "react";
 
 export default function TabsMantine() {
-    const {tabValue} = useParams();
+    const {
+        search,
+        selectSkills,
+    } = useTypedSelector(state => state. vacancyReducer)
+
+    const {city} = useParams();
     const dispatch = useTypedDispatch();
+    const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    useEffect(() => {
+        if (city) {
+            dispatch(setCity(city))
+        }
+    }, []);
+
+    useEffect(() => {
+        const params: Record<string, string> = {};
+        if (search) {
+            params.search = search;
+        }
+        if (selectSkills.length) {
+            params.selectSkills = selectSkills.join(',');
+        }
+         setSearchParams(params);
+    }, [search, city, selectSkills]);
+
     return (
         <Tabs
-            value={tabValue}
             defaultValue="Москва"
+            value={city}
             onChange={(value) => {
                 if (value) {
+                    navigate({
+                        pathname: `/vacancy/${value}`,
+                        search: `${searchParams}`,
+                    })
                     dispatch(setCity(value))
                 }
             }
@@ -19,14 +49,10 @@ export default function TabsMantine() {
         >
             <Tabs.List>
                 <Tabs.Tab value="Москва">
-                    <Link to='/vacancy/Москва'>
                         Москва
-                    </Link>
                 </Tabs.Tab>
                 <Tabs.Tab value="Санкт-Петербург">
-                    <Link to='/vacancy/Санкт-Петербург'>
                     Санкт-Петербург
-                    </Link>
                 </Tabs.Tab>
             </Tabs.List>
         </Tabs>
