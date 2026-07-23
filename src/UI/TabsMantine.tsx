@@ -1,7 +1,7 @@
 import {useParams, useNavigate, useSearchParams} from 'react-router-dom';
 import { Tabs } from '@mantine/core';
 import {useTypedDispatch, useTypedSelector} from "../hooks/redux.ts";
-import { setCity} from '../reducers/VacancySlice';
+import { setSearch, addSkill ,setCity} from '../reducers/VacancySlice';
 import {useEffect} from "react";
 
 export default function TabsMantine() {
@@ -14,8 +14,13 @@ export default function TabsMantine() {
     const dispatch = useTypedDispatch();
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+    const searchQuery = searchParams.get('search');
+    const skillsQuery = searchParams.get('selectSkills')?.split(',') ?? [];
+
 
     useEffect(() => {
+        dispatch(setSearch(searchQuery ?? ''));
+        skillsQuery.forEach(skill => dispatch(addSkill(skill)))
         if (city) {
             dispatch(setCity(city))
         }
